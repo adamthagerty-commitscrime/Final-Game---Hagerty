@@ -1,8 +1,17 @@
+Board mainBoard;
+Scoreboard mainScoreboard;
 void setup() {
-  size (1000,1000);
+  size (800,800);
+  mainBoard = new Board();
+  noStroke();
 }
 
 void draw (){
   background(100);
-  rect(500,0,15,1000);
+
+  mainBoard.boardTiles();
+  mainBoard.yScaleBoardTiles();
+  fill(250);
+  rect(400,0,15,800); //midline
+ 
 }
