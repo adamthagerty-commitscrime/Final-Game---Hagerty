@@ -16,8 +16,12 @@ void draw (){
 
   mainBoard.boardTiles();
   mainBoard.yScaleBoardTiles();
+  mainScoreboard.checkWin();
+  mainScoreboard.addPoint(1, 2);
+  
+  
   fill(24, 212, 12);
-  //rect(400,0,5,800); //midline
+  
  
  
 
