@@ -14,6 +14,11 @@ public class Scoreboard {
     else if (player == 2) player2Score++;
   }
 
+  void removePoint(int player) {
+    if (player == 1 && player1Score > 0) player1Score--;
+    else if (player == 2 && player2Score > 0) player2Score--;
+  }
+
   boolean checkWin() {
     return player1Score >= scoreToWin || player2Score >= scoreToWin;
   }
@@ -21,13 +26,22 @@ public class Scoreboard {
   int getWinner() {
     if (player1Score >= scoreToWin) return 1;
     if (player2Score >= scoreToWin) return 2;
-    return 0; 
+    return 0;
   }
 
   void draw() {
+    fill(0, 0, 0, 120);
+    rect(0, height - 55, width, 55);
     fill(255);
     textSize(20);
-    text("P1: " + player1Score, 20, 30);
-    text("P2: " + player2Score, 450, 30);
+    textAlign(LEFT);
+    text("P1: " + player1Score, 30, height - 22);
+    textAlign(RIGHT);
+    text("P2: " + player2Score, width - 30, height - 22);
+    textAlign(CENTER);
+    fill(200);
+    textSize(13);
+    text("First to " + scoreToWin + "  |  Hit +1  Miss -1", width / 2, height - 22);
+    textAlign(LEFT);
   }
-} 
+}
