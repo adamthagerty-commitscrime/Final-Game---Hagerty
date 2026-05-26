@@ -16,11 +16,11 @@ void setup() {
   size(800, 800);
   noStroke();
   // bg = loadImage("Final CS background.png");
-
+p1Board = new Board(82, 82);
+p2Board = new Board(82, 82);
   mainScoreboard = new Scoreboard(10);
   missileManager = new MissileManager();
-  p1Board = new Board(82, 82);
-  p2Board = new Board(82, 82);
+ 
   p1Ships = createFleet();
   p2Ships = createFleet();
 }
